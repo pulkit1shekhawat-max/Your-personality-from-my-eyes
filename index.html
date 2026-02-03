@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ladleji ✨</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg,
+        #7b1d13,
+        #d44a1c,
+        #f2a03d,
+        #2f6f8f
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .card {
+      background: rgba(255, 248, 241, 0.96);
+      padding: 55px;
+      border-radius: 30px;
+      max-width: 650px;
+      box-shadow: 0 40px 70px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Moon */
+    .moon {
+      position: absolute;
+      top: -60px;
+      right: -40px;
+      width: 140px;
+      height: 140px;
+      background: #fff2d8;
+      border-radius: 50%;
+      opacity: 0.85;
+      box-shadow: 0 0 40px rgba(255,242,216,0.6);
+    }
+
+    /* Mountains */
+    .mountains {
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(to top,
+        rgba(47, 47, 47, 0.35),
+        transparent
+      );
+      clip-path: polygon(
+        0 100%, 10% 70%, 20% 85%, 35% 60%,
+        50% 80%, 65% 55%, 80% 75%, 100% 60%, 100% 100%
+      );
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      color: #7b1d13;
+      text-align: center;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 16px;
+      color: #5a2a20;
+      margin-bottom: 35px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .traits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .trait-btn {
+      background: linear-gradient(135deg, #d44a1c, #f2a03d);
+      border: none;
+      padding: 14px 16px;
+      border-radius: 18px;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .trait-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+    }
+
+    .explanation {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #4a2a20;
+      min-height: 70px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      position: relative;
+      z-index: 2;
+      line-height: 1.6;
+    }
+
+    .explanation.show {
+      opacity: 1;
+    }
+
+    .poet {
+      display: block;
+      margin-top: 6px;
+      font-size: 14px;
+      color: #7b4a3a;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <div class="moon"></div>
+    <div class="mountains"></div>
+
+    <h1>Ladleji ✨</h1>
+    <div class="subtitle">
+      Kuch khoobiyan lafzon se pare hoti hain — phir bhi likhni padti hain
+    </div>
+
+    <div class="traits">
+      <button class="trait-btn" data-text="Baaton mein aisi chingari hai ke khamoshi bhi muskura de." data-poet="— Ghalib ki soch se prerit">Witty</button>
+
+      <button class="trait-btn" data-text="Hansi tumhari koi shor nahi, ek gehra sukoon hai." data-poet="— Gulzar ki tehni par likha">Humor</button>
+
+      <button class="trait-btn" data-text="Tum sochte kam nahi, bas gehra sochte ho." data-poet="— Faiz ke andaaz mein">Intelligence</button>
+
+      <button class="trait-btn" data-text="Tum woh dekh lete ho jo log mehsoos karke bhi chhod dete hain." data-poet="— Manto ki nazar se prerit">Observation</button>
+
+      <button class="trait-btn" data-text="Ehsaas samajhne ke liye tumhein alfaaz nahi chahiye." data-poet="— Faiz ka ehsaas">Emotional Quotient</button>
+
+      <button class="trait-btn" data-text="Tum dar se ladte nahi, use saath le kar chalte ho." data-poet="— Rumi ki rooh se">Daringbazi</button>
+
+      <button class="trait-btn" data-text="Tumhari khamoshi mein bhi hukm hota hai." data-poet="— Sahir ke lehje mein">Don behaviour</button>
+
+      <button class="trait-btn" data-text="Tum samajhte ho dard ko bina sawal kiye." data-poet="— Faiz ke jazbe se">Empathetic</button>
+
+      <button class="trait-btn" data-text="Tumhara jawab sirf reply nahi, ek maujoodgi hota hai." data-poet="— Gulzar se prerit">Best responder to texts</button>
+
+      <button class="trait-btn" data-text="Tum uljhan nahi, wazahat ho." data-poet="— Jaun Elia ki saafgoyi se">Clarity of thoughts</button>
+
+      <button class="trait-btn" data-text="Tum mehsoos karte ho, isliye zinda lagte ho." data-poet="— Rumi ki baat">Sensitive</button>
+
+      <button class="trait-btn" data-text="Tumhari narmi jaanwaron tak pahunch jaati hai." data-poet="— Kabir ki daya se">Animal lover</button>
+
+      <button class="trait-btn" data-text="Tumhari hansi mein zamaane ka sense of humor chhupa hai." data-poet="— Ghalib ke andaaz mein">Meme lord</button>
+
+      <button class="trait-btn" data-text="Chaand aur jungle tumse baat karte hain." data-poet="— Faiz ki raat se">Loves nature & moon</button>
+
+      <button class="trait-btn" data-text="Pahadon jaise ho — shaant, gehre, aur buland." data-poet="— Rahat Indori ke lehje mein">Pahad lover</button>
+    </div>
+
+    <div class="explanation" id="explanation"></div>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.trait-btn');
+    const explanation = document.getElementById('explanation');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        explanation.innerHTML =
+          btn.dataset.text +
+          '<span class="poet">' +
+          btn.dataset.poet +
+          '</span>';
+        explanation.classList.remove('show');
+        void explanation.offsetWidth;
+        explanation.classList.add('show');
+      });
+    });
+  </script>
+
+</body>
+</html>
